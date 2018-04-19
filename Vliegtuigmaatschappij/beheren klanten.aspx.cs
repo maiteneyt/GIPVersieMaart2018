@@ -16,8 +16,12 @@ namespace Vliegtuigmaatschappij
 
         protected void appelboom(object sender, EventArgs e)
         {
-            dtsklantenbeheer.FilterExpression = "Voornaam=' " + cboNamen.SelectedValue + " '";
-            dgvKlanten.DataBind();
+            
+        }
+
+        protected void dgvKlanten_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

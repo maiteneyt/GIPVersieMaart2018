@@ -32,7 +32,7 @@
         <asp:TextBox ID="txtGemeente" runat="server"></asp:TextBox>
     </p>
     <p>
-        Email:<asp:TextBox ID="txtMail" runat="server"></asp:TextBox>
+        Email:<asp:TextBox ID="txtMail" runat="server" Width="309px"></asp:TextBox>
     </p>
     <p>
         <asp:Button ID="btnAanmaken" runat="server" OnClick="btnAanmaken_Click1" Text="aanmaken" />

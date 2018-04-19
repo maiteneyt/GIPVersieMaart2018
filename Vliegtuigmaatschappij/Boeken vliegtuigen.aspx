@@ -19,7 +19,7 @@
 <p>
         &nbsp;</p>
 <p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="dtsVluchtenBijKeuze" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="dgvVluchten" runat="server" AutoGenerateColumns="False" DataSourceID="dtsVluchtenBijKeuze" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
@@ -56,19 +56,25 @@
     <p>
         &nbsp;</p>
 <p>
-        <asp:DropDownList ID="CboLeden" runat="server" DataSourceID="dtsLeden" DataTextField="Naam" DataValueField="KlantnummerID">
+        <asp:DropDownList ID="CboLeden" runat="server" DataSourceID="dtsLeden" DataTextField="Naam" DataValueField="KlantnummerID" OnSelectedIndexChanged="CboLeden_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:SqlDataSource ID="dtsLeden" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Voornaam + ' ' + Familienaam AS Naam, KlantnummerID FROM TblKlant"></asp:SqlDataSource>
     </p>
     <asp:Panel ID="Panel1" runat="server" Height="193px">
         Naam:
-        <asp:TextBox ID="txtNaam" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtNaam" runat="server" OnTextChanged="txtNaam_TextChanged"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RfvNaam" runat="server" ControlToValidate="txtNaam" ErrorMessage="Familienaam is niet ingevuld!"></asp:RequiredFieldValidator>
         <br />
         Voornaam:<asp:TextBox ID="txtVoornaam" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RfvVoornaam" runat="server" ControlToValidate="txtVoornaam" ErrorMessage="Voornaam is niet ingevuld!"></asp:RequiredFieldValidator>
         <br />
-        Geslacht:<asp:TextBox ID="txtGeslacht" runat="server"></asp:TextBox>
-&nbsp;<br /> Geboortedatum:
-        <asp:TextBox ID="txtGeboortedatum" runat="server"></asp:TextBox>
+        Geslacht:&nbsp;<asp:DropDownList ID="cboGeslacht" runat="server" AutoPostBack="True">
+            <asp:ListItem>Man</asp:ListItem>
+            <asp:ListItem>Vrouw</asp:ListItem>
+        </asp:DropDownList>
+        <br /> Geboortedatum:
+        <asp:TextBox ID="txtGeboortedatum" runat="server" TextMode="Date"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="REVGeboortedatum" runat="server" ControlToValidate="txtGeboortedatum" ErrorMessage="Datum als voorbeeld invoeren: 01/02/2018" ValidationExpression="dd/MM/YYYY"></asp:RegularExpressionValidator>
         <br />
         Stoelnr:
         <asp:DropDownList ID="cboStoelnummer" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">

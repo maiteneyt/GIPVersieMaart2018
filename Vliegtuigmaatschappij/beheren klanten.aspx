@@ -18,7 +18,7 @@
     <p>
         &nbsp;</p>
 <p>
-    <asp:GridView ID="dgvKlanten" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="KlantnummerID" DataSourceID="dstKlantenVolledig">
+    <asp:GridView ID="dgvKlanten" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="KlantnummerID" DataSourceID="dstKlantenVolledig" OnSelectedIndexChanged="dgvKlanten_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="KlantnummerID" HeaderText="KlantnummerID" InsertVisible="False" ReadOnly="True" SortExpression="KlantnummerID" />

@@ -67,13 +67,13 @@ namespace Vliegtuigmaatschappij {
         protected global::System.Web.UI.WebControls.SqlDataSource dtsBoeking;
         
         /// <summary>
-        /// GridView1 control.
+        /// dgvVluchten control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView dgvVluchten;
         
         /// <summary>
         /// dtsVluchtenBijKeuze control.
@@ -121,6 +121,15 @@ namespace Vliegtuigmaatschappij {
         protected global::System.Web.UI.WebControls.TextBox txtNaam;
         
         /// <summary>
+        /// RfvNaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvNaam;
+        
+        /// <summary>
         /// txtVoornaam control.
         /// </summary>
         /// <remarks>
@@ -130,13 +139,22 @@ namespace Vliegtuigmaatschappij {
         protected global::System.Web.UI.WebControls.TextBox txtVoornaam;
         
         /// <summary>
-        /// txtGeslacht control.
+        /// RfvVoornaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGeslacht;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvVoornaam;
+        
+        /// <summary>
+        /// cboGeslacht control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboGeslacht;
         
         /// <summary>
         /// txtGeboortedatum control.
@@ -146,6 +164,15 @@ namespace Vliegtuigmaatschappij {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGeboortedatum;
+        
+        /// <summary>
+        /// REVGeboortedatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVGeboortedatum;
         
         /// <summary>
         /// cboStoelnummer control.

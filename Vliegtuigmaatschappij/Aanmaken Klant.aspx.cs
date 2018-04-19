@@ -61,5 +61,10 @@ namespace Vliegtuigmaatschappij
             lblFout.Text = intAantal.ToString() + " record toegevoegd";
 
         }
+
+        protected void txtVoornaam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

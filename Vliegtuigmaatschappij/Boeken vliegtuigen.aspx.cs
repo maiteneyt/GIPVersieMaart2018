@@ -35,18 +35,19 @@ namespace Vliegtuigmaatschappij
 
             string strSQL;
 
-            strSQL = "INSERT INTO tblBoeking (Voornaam, Familienaam, Geslacht, Geboortedatum, Stoelnummer, PersoneelsID, KlantnummerID, VluchtID) VALUES(@voornaam, @familienaam, @geslacht, @geboortedatum, @stoelnummer, @personeelsID,@,KlantnummerID, @VluchtID )";
+            strSQL = "INSERT INTO tblBoeking (Voornaam, Familienaam, Geslacht, Geboortedatum, Stoelnummer, PersoneelsID, KlantnnummerID, VluchtID)";
+            strSQL +="VALUES(@voornaam, @familienaam, @geslacht, @geboortedatum, @stoelnummer, @personeelsID,@,KlantnummerID, @VluchtID )";
             cmd.CommandText = strSQL;
 
             //cmd.CommandText = "INSERT INTO tblBoeking (Voornaam, Familienaam, Geslacht, Geboortedatum, Stoelnummer, personeelsID, klantnummerID, VluchtID) VALUES(@voornaam, @familienaam, @geslacht, @geboortedatum, @stoelnummer)";
             cmd.Parameters.AddWithValue("@voornaam", txtVoornaam.Text);
             cmd.Parameters.AddWithValue("@familienaam", txtNaam.Text);
-            cmd.Parameters.AddWithValue("@geslacht", txtGeslacht.Text);
+            cmd.Parameters.AddWithValue("@geslacht", cboGeslacht.SelectedValue.ToString());
             cmd.Parameters.AddWithValue("@geboortedatum", txtGeboortedatum.Text);
             cmd.Parameters.AddWithValue("@stoelnummer", cboStoelnummer.SelectedItem.ToString());
-            //cmd.Parameters.AddWithValue("@personeelsID", ????????????);
+            cmd.Parameters.AddWithValue("@personeelsID", Session["PersoneelsID"].ToString());
             cmd.Parameters.AddWithValue("@klantnummerID", CboLeden.SelectedValue.ToString());
-            //cmd.Parameters.AddWithValue("@VluchtID", ????????????????);
+            cmd.Parameters.AddWithValue("@VluchtID", dgvVluchten.SelectedRow.Cells[1].Text);
             
 
             cnn.Open();
@@ -68,7 +69,7 @@ namespace Vliegtuigmaatschappij
             {
             cboStoelnummer.Items.Clear();
             int stoelnr, aantalz;
-            aantalz = Convert.ToInt16(GridView1.SelectedRow.Cells[9].Text);
+            aantalz = Convert.ToInt16(dgvVluchten.SelectedRow.Cells[9].Text);
 
 
 
@@ -84,7 +85,7 @@ namespace Vliegtuigmaatschappij
 
 
                 cmdstoel.Parameters.AddWithValue("@stoelnummer", stoelnr);
-                cmdstoel.Parameters.AddWithValue("@vluchtid", GridView1.SelectedRow.Cells[1].Text);
+                cmdstoel.Parameters.AddWithValue("@vluchtid", dgvVluchten.SelectedRow.Cells[1].Text);
                 int intaantalstoelen = Convert.ToInt16(cmdstoel.ExecuteScalar());
 
                 cnn.Close();
@@ -102,10 +103,20 @@ namespace Vliegtuigmaatschappij
            
             txtNaam.Text = String.Empty;
             txtVoornaam.Text = String.Empty;
-            txtGeslacht.Text = string.Empty;
+            cboGeslacht.SelectedValue = string.Empty;
             txtGeboortedatum.Text = String.Empty;
             stoelen();
             
+        }
+
+        protected void txtNaam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CboLeden_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

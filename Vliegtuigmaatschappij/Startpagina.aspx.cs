@@ -12,15 +12,18 @@ namespace Vliegtuigmaatschappij
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["Functie"].ToString()== "FlightOrganisation")
+           if (Session["Functie"].ToString()== "FlightOrganisation")
             {
-                //hier moet je de hyperlink zichtbaar maken. 
-                HyperLink3.Visible = true;
+               HyperLink3.Visible = true;
+               HyperLink2.Visible = true;
+               HyperLink4.Visible = true;
+               HyperLink6.Visible = true;
             
             }
             else
             {
-                HyperLink3.Visible = false;
+             
+                HyperLink6.Visible = false;
             }
 
         }
