@@ -58,6 +58,15 @@ namespace Vliegtuigmaatschappij {
         protected global::System.Web.UI.WebControls.TextBox txtVoornaam;
         
         /// <summary>
+        /// revVoornaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revVoornaam;
+        
+        /// <summary>
         /// txtNaam control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace Vliegtuigmaatschappij {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNaam;
+        
+        /// <summary>
+        /// revFamilienaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revFamilienaam;
         
         /// <summary>
         /// txtAdres control.
@@ -76,6 +94,15 @@ namespace Vliegtuigmaatschappij {
         protected global::System.Web.UI.WebControls.TextBox txtAdres;
         
         /// <summary>
+        /// revAdres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revAdres;
+        
+        /// <summary>
         /// txtPostnummer control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace Vliegtuigmaatschappij {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPostnummer;
+        
+        /// <summary>
+        /// revPostcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPostcode;
         
         /// <summary>
         /// txtGemeente control.
@@ -94,6 +130,15 @@ namespace Vliegtuigmaatschappij {
         protected global::System.Web.UI.WebControls.TextBox txtGemeente;
         
         /// <summary>
+        /// revGemeente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revGemeente;
+        
+        /// <summary>
         /// txtMail control.
         /// </summary>
         /// <remarks>
@@ -101,6 +146,15 @@ namespace Vliegtuigmaatschappij {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMail;
+        
+        /// <summary>
+        /// revMail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMail;
         
         /// <summary>
         /// btnAanmaken control.
